@@ -29,18 +29,22 @@ function renderTasks(e) {
         const task = document.createElement("p");
 
         const taskEndButton = document.createElement("i");
-        taskEndButton.classList = "fa-solid fa-check";
+        taskEndButton.classList = "fa-solid fa-check green";
         taskEndButton.addEventListener("click", () => {
-            taskDiv.classList.add("taskEnd")
+            if (taskDiv.classList.contains("taskEnd")) {
+                taskDiv.classList.remove("taskEnd"); // Si ya tiene la clase, la quitamos
+            } else {
+                taskDiv.classList.add("taskEnd"); // Si no tiene la clase, la agregamos
+            }
+        });
 
-        })
 
 
         task.innerText = inputValue;
 
 
         const deleteTaskButton = document.createElement("i");
-        deleteTaskButton.classList = "fa-solid fa-trash";
+        deleteTaskButton.classList = "fa-solid fa-trash red";
 
         deleteTaskButton.addEventListener("click", () => {
             // Elimina la tarea del objeto y del DOM

@@ -87,16 +87,14 @@ button {
   justify-items: center;
 }
 .taskEnd {
-  text-decoration: underline;
+  text-decoration: line-through;
 }
-
 
 .task p {
   color: #160e4b;
   margin-block: 0.5rem;
   font-size: 1.3rem;
   text-transform: capitalize;
-  text-decoration: underline;
 }
 
 .task i {
@@ -104,11 +102,61 @@ button {
   padding: 5px;
   border-radius: 100vmax;
   border: none;
-  color: rgba(255, 0, 0, 0.692);
 }
 
-.task i:hover {
-  color: red;
+.green {
+  color: rgb(0, 163, 0);
+  background: #a2c579;
 }
 
+.green:hover {
+  color: rgb(0, 82, 0);
+  background-color: greenyellow;
+}
 
+.red {
+  color: rgb(216, 33, 33);
+}
+
+@media (max-width: 420px) {
+  .app {
+    width: 99%;
+    height: fit-content;
+  }
+  #menu-button {
+    display: block; /* Muestra el botón en pantallas más pequeñas */
+  }
+
+  .title-container {
+    flex-direction: column;
+  }
+  .title-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .container form {
+    flex-direction: column;
+  }
+
+  .container form input {
+    margin-block: 0.5rem;
+  }
+
+  .task {
+    display: flex;
+    justify-content: flex-end;
+    margin-block: .5rem;
+  }
+
+  .task p {
+    font-size: 1rem;
+    margin-inline-end: 1rem;
+  }
+
+  .task i {
+    margin: .2rem;
+    font-size: .9rem;
+  }
+
+
+}
