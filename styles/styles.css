@@ -82,10 +82,14 @@ button {
 .task {
   width: 100%;
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 4fr 1fr 1fr;
   align-items: center;
   justify-items: center;
 }
+.taskEnd {
+  text-decoration: underline;
+}
+
 
 .task p {
   color: #160e4b;
@@ -106,3 +110,5 @@ button {
 .task i:hover {
   color: red;
 }
+
+

@@ -14,12 +14,12 @@ const addTask = (title) => {
 
 function renderTasks(e) {
     e.preventDefault(); //previene el funcionamiento por defecto del form
-    
+
     const inputValue = input.value;
 
     if (inputValue.trim() !== "") {
 
-   
+
 
         addTask(inputValue);
 
@@ -27,7 +27,17 @@ function renderTasks(e) {
         taskDiv.classList.add("task");
 
         const task = document.createElement("p");
+
+        const taskEndButton = document.createElement("i");
+        taskEndButton.classList = "fa-solid fa-check";
+        taskEndButton.addEventListener("click", () => {
+            taskDiv.classList.add("taskEnd")
+
+        })
+
+
         task.innerText = inputValue;
+
 
         const deleteTaskButton = document.createElement("i");
         deleteTaskButton.classList = "fa-solid fa-trash";
@@ -40,6 +50,7 @@ function renderTasks(e) {
 
         taskDiv.appendChild(task);
         taskDiv.appendChild(deleteTaskButton);
+        taskDiv.appendChild(taskEndButton);
         tasksContainer.appendChild(taskDiv);
 
         // Limpia el campo de entrada después de agregar la tarea
